@@ -1,0 +1,89 @@
+{
+    "banner": {
+        "name" : "Hoang Le",
+        "birth" : "22-07-1997",
+        "job" : "Full Stack Developer",
+        "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+    },
+    "intro" : {
+        "title" : "Hi, I am Hoang Le",
+        "img": "./img/ava.jpg",
+        "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Sea ex quem esse natum, eos nisl luptatum et, nostro eruditi id vim. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea. Mei et clita prodesset, ne pro nonumy repudiandae ullamcorper."
+    },
+    "projects" : [
+        {
+            "id" : 1,
+            "name": "Project 1",
+            "img" : "./img/project1.jpg",
+            "description": "Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+        },
+        {
+            "id" : 2,
+            "name": "Project 2",
+            "img" : "./img/project2.jpg",
+            "description": "Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+        },
+        {
+            "id" : 3,
+            "name": "Project 3",
+            "img" : "./img/project3.jpg",
+            "description": "Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+        },
+        {
+            "id" : 4,
+            "name": "Project 4",
+            "img" : "",
+            "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+        }
+    ],
+    "education" : [
+        {
+            "id": 1,
+            "name": "Vaasa University of Applied Sciences",
+            "degree": "degree",
+            "time": "Sep 2015- Dec 2019",
+            "courses": [
+                {
+                    "id" : 1,
+                    "name": "Course 1"
+                },
+                {
+                    "id" : 2,
+                    "name": "Course 2"
+                },
+                {
+                    "id" : 3,
+                    "name": "Course 3"
+                }
+            ],
+            "img" : ""
+        },
+        {
+            "id": 2,
+            "name": "Udemy",
+            "degree": "degree",
+            "time": "Sep 2015- Dec 2019",
+            "courses": [
+                {
+                    "id" : 1,
+                    "name": "Course 1"
+                },
+                {
+                    "id" : 2,
+                    "name": "Course 2"
+                },
+                {
+                    "id" : 3,
+                    "name": "Course 3"
+                }
+            ],
+            "img" : ""
+        }
+    ],
+    "contact" : {
+        "address" : "",
+        "email": "",
+        "linkedin": "",
+        "github": ""
+    }
+}
