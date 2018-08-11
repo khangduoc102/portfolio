@@ -6,9 +6,9 @@
         "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
     },
     "intro" : {
-        "title" : "Hi, I am Hoang Le",
+        "title" : "Hi, I am Hoang",
         "img": "./img/ava.jpg",
-        "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Sea ex quem esse natum, eos nisl luptatum et, nostro eruditi id vim. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea. Mei et clita prodesset, ne pro nonumy repudiandae ullamcorper."
+        "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Sea ex quem esse natum, eos nisl luptatum et, nostro eruditi id vim."
     },
     "projects" : [
         {
@@ -40,20 +40,20 @@
         {
             "id": 1,
             "name": "Vaasa University of Applied Sciences",
-            "degree": "degree",
+            "degree": "Bachelor of Engineering - Information Technology",
             "time": "Sep 2015- Dec 2019",
             "courses": [
                 {
                     "id" : 1,
-                    "name": "Course 1"
+                    "name": "Web Development"
                 },
                 {
                     "id" : 2,
-                    "name": "Course 2"
+                    "name": "Java Server Programming"
                 },
                 {
                     "id" : 3,
-                    "name": "Course 3"
+                    "name": ".Net Programming"
                 }
             ],
             "img" : ""
@@ -61,29 +61,30 @@
         {
             "id": 2,
             "name": "Udemy",
-            "degree": "degree",
-            "time": "Sep 2015- Dec 2019",
+            "degree": "Online School",
+            "time": "Sep 2015- now", 
             "courses": [
                 {
                     "id" : 1,
-                    "name": "Course 1"
+                    "name": "Node.js Developer Course"
                 },
                 {
                     "id" : 2,
-                    "name": "Course 2"
+                    "name": "React.js Developer Course"
                 },
                 {
                     "id" : 3,
-                    "name": "Course 3"
+                    "name": "Advance JavaScript"
                 }
             ],
             "img" : ""
         }
     ],
     "contact" : {
-        "address" : "",
-        "email": "",
-        "linkedin": "",
-        "github": ""
+        "address" : "65100 Vaasa, Finland",
+        "email": "hoang_lp_97@yahoo.com",
+        "phone": "+358 465672992",
+        "linkedin": "/in/hoang-le-772160119/",
+        "github": "/khangduoc102"
     }
 }

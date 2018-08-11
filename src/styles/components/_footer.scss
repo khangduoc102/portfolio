@@ -1,15 +1,64 @@
-.contact-form{
-    display:block;
-    float:left;
-    width: 50%;
+.app-footer{
+    margin:0;
 }
-    .contact-form .line{
+
+.contact-form{
+    margin-bottom: 5rem;
+}
+    .app-footer .line{
         width: 16rem;
         background-color: white;
         border: none;
         margin: 4.5rem 0;
     }
+
+    .contact-form .form-group{
+        padding-bottom: 1rem;
+        width: 60%;
+    }
+
+    .contact-form .form-control{
+        font-size: $s-size;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        resize: none;
+    }
+
+    .contact-form .send-btn{
+        padding: 1rem 4rem;
+        background: none;
+        border: solid 1px white;
+    }
+        .contact-form .send-btn p{
+            color: white;
+        }
 .contact-places {
-    float:right;
-    width: 50%;
+
 }
+
+    .contact-places .address-block{
+        margin-bottom: 3rem;
+        width: 100%;
+        display: inline-block;
+    }
+        .contact-places .address-block h3{
+            float: left;
+            width: 5rem;
+            height: 5rem;
+            border: solid 1px white;
+            border-radius: 50%;
+            text-align: center;
+            margin: 0;
+            padding:1rem;
+            margin-right: 2rem;
+        }
+            .contact-places .address-block h3 svg{
+                margin: 0 auto;
+                width: 3rem;
+                height: 3rem;
+            }
+        
+        .contact-places .address-block p{
+            font-size: $s-size;
+            line-height: 5rem;
+        }
