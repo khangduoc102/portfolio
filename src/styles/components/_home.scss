@@ -27,11 +27,10 @@
             float: left;
             margin-left: 4rem;
             height: 100%;
-            padding-top: 1rem;
         }
             .logo-name .header{
-                margin-top: -0.75rem;
-                margin-bottom: 0.25rem;
+                line-height: 6.8rem;
+                margin-bottom: 1.2rem;
                 text-transform: uppercase;
                 color: black;
                 -webkit-text-fill-color: white; /* Will override color (regardless of order) */
@@ -40,6 +39,7 @@
                 letter-spacing: 0.25rem;
             }
             .logo-name .sub-header{
+                line-height: 3.6rem;
                 color: white;
                 letter-spacing: 0.1rem;
             }
@@ -58,13 +58,14 @@
 
 .info{
     background-color: white; 
-    padding: 6.5rem 0;
     border-radius: 1rem;
 }
     .intro{
         height: 40rem;
+        padding-top: 10rem;
         width: calc(100% - 15.4rem);
         margin: 0 auto;
+        margin-bottom: 20rem;
     }
         .intro-block{
             width: 55%;
@@ -103,7 +104,9 @@
             }
 
     .projects{
-        height: 65rem;
+        padding-top: 10rem;
+        margin-bottom: 10rem;
+        height: fit-content;
         text-align: center;
     }
         .project .sub-header{
@@ -119,7 +122,7 @@
         .slide-list {
             display: block;
             width: 100%;
-            height: 50rem;
+            height: fit-content;
         }
             .slide-list .left{
                 float: left;
@@ -129,6 +132,7 @@
                 .slide-list .left .header{
                     display:block;
                     line-height: 50rem;
+                    cursor: pointer;
                 }
                     .slide-list .left .header svg{
                         margin: 124% auto;
@@ -140,6 +144,7 @@
             }
                 .slide-list .right .header{
                     line-height: 50rem;
+                    cursor: pointer;
                 }
                     .slide-list .right .header svg{
                         margin: 124% auto;
@@ -152,7 +157,7 @@
                 .slide-list-element{
                     float:left;
                     width: 33%;
-                    height: 100%;
+                    height: 50rem;
                 }
                     .slide-list-element .img-block{
                         width: 18rem;
@@ -175,19 +180,28 @@
                         margin: 0 1rem;
                     }
                     .slide-list-element .prj-des{
-                        height: 10rem;
+                        height: 13.5rem;
                         margin: 1rem 1rem;
+                        overflow-y: auto;
                     }
 
                     .slide-list-element .btn{
-                        margin-top: 4rem;
+                        margin-top: 2rem;
+                        
                     }
 
     .education{
         text-align: center;
-        height: 35rem;
+        height: fit-content;
         width: calc(100% - 15.4rem);
         margin: 0 auto;
+        padding-top: 10rem;
+        margin-bottom: 2rem;
+    }
+    .education .show-list-element {
+        padding:0;
+        min-height: 8.5rem;
+        margin-bottom: 5rem;
     }
         .education .line{
             width: 16rem;
@@ -207,6 +221,7 @@
                 height: 90%;
                 width: 90%;
                 border-radius: 50%;
+                border: solid 1px rgba(88, 89, 91, 0.3);
                 margin: 5% auto;
             }
 
@@ -230,3 +245,100 @@
                 color: #58595b;
                 font-weight: 400;
             }
+
+            .education .dropdown{
+                align-content: right;
+                padding-top: 3rem;
+                width: 100%;
+            }
+                .education .dropdown .dropdown-toggle{
+                    float: right;
+                }
+
+                .education .dropdown .collapse, .education .dropdown .collapsing{
+                    margin-top: 1.5rem;
+                    float: right;
+                    width: 100%;
+                }
+                .education .dropdown .card {
+                    font-size: $s-size;
+                    text-align: right;
+                    color: #58595b;
+                }
+
+
+    .exp{
+        text-align: center;
+        height: fit-content;
+        width: calc(100% - 15.4rem);
+        margin: 0 auto;
+        padding-top: 10rem;
+        margin-bottom: 10rem;
+    }
+    .exp .show-list-element {
+        margin-bottom: 5rem;
+        min-height: 5rem;
+        height: fit-content;
+    }
+        .exp .line{
+            width: 16rem;
+            background: linear-gradient(to right, #14C7CE, #009EFD );
+            border: none;
+            margin: 4.5rem auto;
+        }
+
+        .exp .ava {
+            float: left;
+            width: 8rem;
+            height: 8rem;
+            margin-right: 4rem;
+        }
+            .exp .ava img{
+                display: block;
+                height: 90%;
+                width: 90%;
+                border-radius: 50%;
+                border: solid 1px rgba(88, 89, 91, 0.3);
+                margin: 5% auto;
+                
+            }
+
+        .exp .description{
+            text-align: left;
+            height: fit-content;
+        }
+            .exp .description p{
+                line-height: fit-content;
+            }
+            .exp .description .sub-title{
+                color: #212529;
+                margin-top: -0.5rem;
+                margin-bottom: 0.875rem;
+            }
+            .exp .description .text{
+                margin-bottom: 0.875rem;
+            }
+            .exp .description .mini-text{
+                margin-bottom: 0;
+                color: #58595b;
+                font-weight: 400;
+            }
+            .exp .dropdown{
+                position: absolute;
+                right:0;
+                padding-top: 3rem;
+                width: 80.5rem;
+            }
+                .exp .dropdown .dropdown-toggle{
+                    float: right;
+                }
+
+                .exp .collapse, .exp .collapsing{
+                    margin-top: 1.5rem;
+                    width: 100%;
+                }
+                .exp .card {
+                    font-size: $s-size;
+                    text-align: left;
+                    color: #58595b;
+                }

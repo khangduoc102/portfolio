@@ -1,33 +1,59 @@
 import React from 'react';
-import IoBonfire from 'react-icons/lib/io/bonfire';
-import { NavLink } from 'react-router-dom';
 
 export default class Header extends React.Component {
+    state={
+        className: 'app-header'
+    }
+
+    componentDidMount= () => {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () =>{
+        let lastScrollY = window.scrollY;
+        if(lastScrollY>=625){
+            this.setState({className: 'app-header app-header_scroll-changed'})
+        }
+        else{
+            this.setState({className: 'app-header'})
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+
     render() {
         return (
-            <div className="app-header">
+            <div className={this.state.className}>
                 <div className="nav-bar">
                     <div className="nav-bar__tab">
                     {
                         // <NavLink to="/contact" activeClassName="is-active" >CONTACT</NavLink>
                     }
                         <div>
-                            <p className="sub-title">About</p> 
+                            <a className="sub-title" href="#about">About</a> 
                         </div>        
                     </div>
                     <div className="nav-bar__tab">
                         <div>
-                            <p className="sub-title">Projects</p> 
+                            <a className="sub-title" href="#projects">Projects</a> 
                         </div>    
                     </div>
                     <div className="nav-bar__tab">
                         <div>
-                            <p className="sub-title">Education</p> 
+                            <a className="sub-title" href="#education">Education</a> 
                         </div>    
                     </div>
                     <div className="nav-bar__tab">
                         <div>
-                            <p className="sub-title">Contact</p> 
+                            <a className="sub-title" href="#exp">Experience</a> 
+                        </div>    
+                    </div>
+                    <div className="nav-bar__tab">
+                        <div>
+                            <a className="sub-title" href="#contact">Contact</a> 
                         </div>    
                     </div>                    
                 </div>

@@ -2,12 +2,37 @@ import React from 'react';
 import IoBonfire from 'react-icons/lib/io/bonfire';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
+import { Collapse, CardBody, Card } from 'reactstrap';
+
 import data from './../data.json';
 
 export default class Home extends React.Component {
     state= {
-        showedPrj: [0, 1, 2]
+        showedPrj: [0, 1, 2],
+        collapseCourses: [false, false],
+        collapseExps: [false]
+    }
 
+    componentDidMount = () => {
+
+    }
+
+    toggleCourses(id) {
+        this.setState({ collapseCourses: this.state.collapseCourses.map((item, index) => {
+            if(index === id-1){
+                item=!item
+            }
+            return item
+        }) });
+    }
+
+    toggleExps(id) {
+        this.setState({ collapseExps: this.state.collapseExps.map((item, index) => {
+            if(index === id-1){
+                item=!item
+            }
+            return item
+        }) });
     }
 
     handleRight= () => {
@@ -46,7 +71,7 @@ export default class Home extends React.Component {
                     </div>
                     <p className="text">Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea.</p>        
                 </div>
-                <div className="info">
+                <div className="info" id="about">
                     <div className="intro">
                         <div className="intro-block">
                             <p className="sub-header">{data.intro.title}</p>
@@ -57,11 +82,11 @@ export default class Home extends React.Component {
                             </button>
                         </div>
                         <div className="ava">
-                            <img src="./img/ava.jpg" alt="my ava" className="ava-img" />
+                            <img src={data.intro.img} alt="my ava" className="ava-img" />
                         </div>
                     </div>
                     <div className="line"> </div>
-                    <div className="projects">
+                    <div className="projects" id="projects">
                         <p className="sub-header">Projects</p>
                         <div className="line"></div>
                         <div className="slide-list">
@@ -88,6 +113,7 @@ export default class Home extends React.Component {
                                                     </div>
                                                 )
                                             }
+                                            else return null;
                                         })
                                 }
                                 </div>
@@ -100,38 +126,89 @@ export default class Home extends React.Component {
 
                     <div className="line"> </div>
                     
-                    <div className="education">
+                    <div className="education" id="education">
                         <p className="sub-header">Education</p>
                         <div className="line"></div>
                         <div className="show-list">
-                            <div className="container show-list-element">
-                                <div className="row">
-                                    <div className="col-8 p-0">
-                                        <div className="ava">
-                                            <img alt="vamk" className="ava-img"/>
-                                        </div>
-                                        <div className="description">
-                                            <p className="sub-title">{data.education[0].name}</p>
-                                            <p className="text">{data.education[0].degree}</p>
-                                            <p className="mini-text">{data.education[0].time}</p>
-                                        </div>
-                                    </div>
-                                    <div className="col-4 p-0">
+                            {
+                                data.education.map((element) => (
+                                    <div className="container show-list-element" key={element.id}>
                                         <div className="row">
-                                            <div className="col-6">
-                                                <div className="dropdown">
-                                                    <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</button>
-                                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a className="dropdown-item">{data.education[0].courses[0].name}</a>
-                                                        <a className="dropdown-item">{data.education[0].courses[1].name}</a>
-                                                        <a className="dropdown-item">{data.education[0].courses[2].name}</a>
-                                                    </div>
+                                            <div className="col-8 p-0">
+                                                <div className="ava">
+                                                    <img src={element.img} alt="vamk" className="ava-img"/>
+                                                </div>
+                                                <div className="description">
+                                                    <p className="sub-title">{element.name}</p>
+                                                    <p className="text">{element.degree}</p>
+                                                    <p className="mini-text">{element.time}</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-4 p-0">
+                                                        <div className="dropdown">
+                                                        
+                                                            <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" onClick={() => this.toggleCourses(element.id)} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</button>
+                                                            <Collapse isOpen={this.state.collapseCourses[element.id-1]}>
+                                                                <Card>
+                                                                    <CardBody>
+                                                                        {
+                                                                            element.courses.map((course) => (
+                                                                                <a className="dropdown-item" key={course.id}>{course.name}</a>
+                                                                            ))
+                                                                        }
+                                                                    </CardBody>
+                                                                </Card>
+                                                            </Collapse>
+                                                                             
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div> 
+                                ))
+                            }
+                        </div>
+                    </div>
+                    
+                    <div className="line"> </div>
+                    
+                    <div className="exp" id="exp">
+                        <p className="sub-header">Experience</p>
+                        <div className="line"></div>
+                        <div className="show-list">
+                            {
+                                data.exp.map((element) => (
+                                    <div className="container show-list-element" key={element.id}>
+                                        <div className="row">
+                                            <div className="col-8 p-0">
+                                                <div className="ava">
+                                                    <img src={element.img} alt="vamk" className="ava-img"/>
+                                                </div>
+                                                <div className="description">
+                                                    <p className="sub-title">{element.companyName}</p>
+                                                    <p className="text">{element.role}</p>
+                                                    <p className="mini-text">{element.time}</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-4 p-0">
+                                                <div className="dropdown">
+                                                    <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" onClick={() => this.toggleExps(element.id)} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Detail</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <Collapse isOpen={this.state.collapseExps[element.id-1]}>
+                                                            <Card>
+                                                                <CardBody>
+                                                                    {
+                                                                        element.description
+                                                                    }
+                                                                </CardBody>
+                                                            </Card>
+                                            </Collapse>
+                                        </div>
+                                    </div> 
+                                ))
+                            }
                         </div>
                     </div>
                 </div>

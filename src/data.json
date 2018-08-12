@@ -7,7 +7,7 @@
     },
     "intro" : {
         "title" : "Hi, I am Hoang",
-        "img": "./img/ava.jpg",
+        "img": "./img/ava2.jpg",
         "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Sea ex quem esse natum, eos nisl luptatum et, nostro eruditi id vim."
     },
     "projects" : [
@@ -32,7 +32,7 @@
         {
             "id" : 4,
             "name": "Project 4",
-            "img" : "",
+            "img" : "./img/project1.jpg",
             "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
         }
     ],
@@ -56,7 +56,7 @@
                     "name": ".Net Programming"
                 }
             ],
-            "img" : ""
+            "img" : "./img/vamk.png"
         },
         {
             "id": 2,
@@ -77,7 +77,18 @@
                     "name": "Advance JavaScript"
                 }
             ],
-            "img" : ""
+            "img" : "./img/udemy.jpg"
+        }
+    ],
+    "exp": [
+        {
+            "id": "1",
+            "companyName": "My Global Dreams",
+            "img" : "./img/mgd.png",
+            "time" : "June 2018- now",
+            "role" : "Full-stack Developer Intern",
+            "tools" : ["Angular 5", "Node.js", "Bootstrap"],
+            "description" :"Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
         }
     ],
     "contact" : {

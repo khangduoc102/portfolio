@@ -6,15 +6,20 @@ import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square';
 import FaGithub from 'react-icons/lib/fa/github';
 import data from './../data.json';
 
+
+
 export default class Home extends React.Component {
+    onSubmit= () =>{
+        
+    }
     render() {
         return (
-            <div className="container-fluid app-footer">
+            <div className="container-fluid app-footer" id="contact">
                 <div className="row">
                     <div className="col-8 contact-form">
                         <p className="sub-header">Get in touch</p>
                         <div className="line"></div>
-                        <form>
+                        <form onSubmit={this.onSubmit}>
                             <div className="form-group">
                                 <p className="text">Name*</p>
                                 <input className="form-control" type="text" size="50"/>
