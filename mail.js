@@ -8,12 +8,13 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-sendMail= (from, to, subject, html) =>{
+sendMail= (from, to, subject, html, text) =>{
     var mailOptions = {
         from: from,
         to: to,
         subject: subject,
-        html: html
+        html: html,
+        text: text
       };
       
     transporter.sendMail(mailOptions, function(error, info){
