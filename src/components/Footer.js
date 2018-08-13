@@ -6,11 +6,39 @@ import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square';
 import FaGithub from 'react-icons/lib/fa/github';
 import data from './../data.json';
 
+import axios from 'axios';
 
 
 export default class Home extends React.Component {
-    onSubmit= () =>{
+    onSubmit= (e) =>{
+        e.preventDefault();
+        const name = e.target.elements[0].value;
+        const email = e.target.elements[1].value;
+        const message = e.target.elements[2].value;
+
+        let mail = {
+            from: `${name} <${email}>`,
+            to: 'hoang_lp_97@yahoo.com',
+            subject: `${name} sent an email!`,
+            html: message
+        }
+
+        let responsedMail = {
+            from: `hoang_lp_97@yahoo.com`,
+            to: email,
+            subject: 'Thank you for contacting me!',
+            html: `<h4>Hi ${name}!<h4> <p>If you receive this email, that means your message had been sent. Thank you so much and I will see you very soon!.<p><br><p>Have a nice day!</p><h4>Hoang Le</h4>`
+        }
         
+        console.log(mail);
+        console.log(responsedMail);
+
+        let data = new FormData();
+        data.set('mail', mail);
+        data.set('responsedMail', responsedMail);
+        axios.post('/sendMail', data).then((res) =>{
+              console.log(res)
+          }).catch((e) => console.log(e));
     }
     render() {
         return (
