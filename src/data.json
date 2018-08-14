@@ -54,6 +54,14 @@
                 {
                     "id" : 3,
                     "name": ".Net Programming"
+                },
+                {
+                    "id" : 4,
+                    "name": "Web Services"
+                },
+                {
+                    "id" : 5,
+                    "name": "Software Engineer Project"
                 }
             ],
             "img" : "./img/vamk.png"

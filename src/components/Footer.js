@@ -9,8 +9,14 @@ import data from './../data.json';
 import axios from 'axios';
 
 export default class Home extends React.Component {
+    state= {
+        sendButtonClass:"btn send-btn",
+        sendButtonStatus: false,
+        error: undefined
+    }
     onSubmit= (e) =>{
         e.preventDefault();
+        this.setState({sendButtonClass: "btn send-btn", sendButtonStatus: true})
         const name = e.target.elements[0].value;
         const email = e.target.elements[1].value;
         const message = e.target.elements[2].value;
@@ -27,7 +33,7 @@ export default class Home extends React.Component {
             from: `hoang_lp_97@yahoo.com`,
             to: email,
             subject: 'Thank you for contacting me!',
-            html: `<h4>Hi ${name}!<h4> <p>If you receive this email, that means your message had been sent. Thank you so much and I will see you very soon!.<p><br><p>Have a nice day!</p><h4>Hoang Le</h4>`,
+            html: `<h4>Hi ${name}!<h4> <p>If you receive this email, that means your message had been sent. Thank you so much and I will see you very soon!</p><br><p>Have a nice day!</p><h4>Hoang Le</h4>`,
             text: ''
         }
         
@@ -43,8 +49,10 @@ export default class Home extends React.Component {
             mail: mail,
             responsedMail: responsedMail
         }).then((res) =>{
-              console.log(res)
-          }).catch((e) => console.log(e));
+                this.setState({sendButtonClass: "btn send-btn success", sendButtonStatus: true})
+          }).catch((e) => {
+                this.setState({sendButtonClass: "btn send-btn", error: "Something happened, please try again!"});
+          });
           
     }
     render() {
@@ -67,9 +75,12 @@ export default class Home extends React.Component {
                                 <p className="text">Message*</p>
                                 <textarea className="form-control" rows="6" cols="60"/>
                             </div>
-                            <button className="btn send-btn" type="submit">
+                            <button className={this.state.sendButtonClass} type="submit" disabled={this.state.sendButtonStatus}>
                                 <p className="sub-title">Send</p>
                             </button>
+                            {
+                                this.state.error ? <p>{this.state.error}</p> : null
+                            }
                         </form>
                     </div>
                     <div className="col-4 contact-places">

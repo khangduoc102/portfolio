@@ -17,7 +17,6 @@ export default class Header extends React.Component {
         else{
             this.setState({className: 'app-header'})
         }
-        console.log(lastScrollY);
     }
 
     componentWillUnmount() {

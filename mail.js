@@ -9,6 +9,7 @@ var transporter = nodemailer.createTransport({
 });
 
 sendMail= (from, to, subject, html, text) =>{
+    let result = "OK";
     var mailOptions = {
         from: from,
         to: to,
@@ -17,15 +18,21 @@ sendMail= (from, to, subject, html, text) =>{
         text: text
       };
       
-    transporter.sendMail(mailOptions, function(error, info){
-        const time = new Date();
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(info);
-        }
-        console.log(time);
-    });
+    try{
+        transporter.sendMail(mailOptions, function(error, info){
+            const time = new Date();
+            if (error) {
+                result= new Error('error!')
+            } else {
+                console.log(info);
+            }
+            console.log(time);
+        });
+    } catch(e){
+        result="Error"
+    }
+
+    return result;
 }
 
 module.exports= {
