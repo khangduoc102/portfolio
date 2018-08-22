@@ -10,13 +10,13 @@ import axios from 'axios';
 
 export default class Home extends React.Component {
     state= {
-        sendButtonClass:"btn send-btn",
+        loading: false,
         sendButtonStatus: false,
         error: undefined
     }
     onSubmit= (e) =>{
         e.preventDefault();
-        this.setState({sendButtonClass: "btn send-btn", sendButtonStatus: true})
+        this.setState({loading: true, sendButtonStatus: true})
         const name = e.target.elements[0].value;
         const email = e.target.elements[1].value;
         const message = e.target.elements[2].value;
@@ -49,9 +49,9 @@ export default class Home extends React.Component {
             mail: mail,
             responsedMail: responsedMail
         }).then((res) =>{
-                this.setState({sendButtonClass: "btn send-btn success", sendButtonStatus: true})
+                this.setState({loading: false, sendButtonStatus: true})
           }).catch((e) => {
-                this.setState({sendButtonClass: "btn send-btn", error: "Something happened, please try again!"});
+                this.setState({loading: false, error: "Something happened, please try again!"});
           });
           
     }
@@ -75,8 +75,10 @@ export default class Home extends React.Component {
                                 <p className="text">Message*</p>
                                 <textarea className="form-control" rows="6" cols="60"/>
                             </div>
-                            <button className={this.state.sendButtonClass} type="submit" disabled={this.state.sendButtonStatus}>
-                                <p className="sub-title">Send</p>
+                            <button className="btn send-btn" type="submit" disabled={this.state.sendButtonStatus}>
+                                {
+                                    this.state.loading ? <div className="loading"></div> : <p className="sub-title">Send</p>
+                                }
                             </button>
                             {
                                 this.state.error ? <p>{this.state.error}</p> : null
