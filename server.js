@@ -11,6 +11,7 @@ const mailService = require('./mail');
 // respond with "hello world" when a GET request is made to the homepage
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/', function (req, res) {
+    console.log('connected');
     res.sendFile(path.join(__dirname+'/build/index.html'));
 })
 
