@@ -11,7 +11,7 @@ export default class Header extends React.Component {
 
     handleScroll = () =>{
         let lastScrollY = window.scrollY;
-        if(lastScrollY>=625 && lastScrollY<2911){
+        if(lastScrollY>=600 && lastScrollY<2911){
             this.setState({className: 'app-header app-header_scroll-changed'})
         }
         else{
@@ -37,7 +37,7 @@ export default class Header extends React.Component {
                         </div>        
                     </div>
                     <div className="nav-bar__tab">
-                        <div>
+                        <div >
                             <a className="sub-title" href="#projects">Projects</a> 
                         </div>    
                     </div>

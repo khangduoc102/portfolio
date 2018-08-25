@@ -2,6 +2,7 @@
     margin: 10rem auto;
     word-wrap: break-word;
     height: 35rem;
+    animation: 5s ease 2s appear infinite;
 }
     .logo {
         width: fit-content;
@@ -342,3 +343,13 @@
                     text-align: left;
                     color: #58595b;
                 }
+
+
+@keyframes appear {
+    from {
+        left:0px; top:-200px;
+    }
+    to {
+        left:0px; top:0px;
+    }
+}

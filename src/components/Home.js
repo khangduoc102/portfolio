@@ -64,12 +64,12 @@ export default class Home extends React.Component {
                             <p><IoBonfire /></p>
                         </div>
                         <div className="logo-name">
-                            <p className="header">hoang le</p>
-                            <p className="sub-header">Full Stack Developer</p>
+                            <p className="header">{data.banner.name}</p>
+                            <p className="sub-header">{data.banner.job}</p>
                             
                         </div>
                     </div>
-                    <p className="text">Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea.</p>        
+                    <p className="text">{data.banner.description}</p>        
                 </div>
                 <div className="info" id="about">
                     <div className="intro">

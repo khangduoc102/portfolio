@@ -3,31 +3,31 @@
         "name" : "Hoang Le",
         "birth" : "22-07-1997",
         "job" : "Full Stack Developer",
-        "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+        "description": "Front-end Development with Angular 5 & React.js. Back-end Development with Node.js Express, PostgreSQL and MongoDB."
     },
     "intro" : {
         "title" : "Hi, I am Hoang",
         "img": "./img/ava2.jpg",
-        "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Sea ex quem esse natum, eos nisl luptatum et, nostro eruditi id vim."
+        "description": "Was born in Viet Nam in 1997, I am currently stuyding final year in VAMK, Vaasa University of Applied Sciences, in Finland. I am trying hard to get a work place with my JavaScript skills. My dream is to become a great Software Engineer and publish the greatest app ever!"
     },
     "projects" : [
         {
             "id" : 1,
-            "name": "Project 1",
+            "name": "Chat App",
             "img" : "./img/project1.jpg",
-            "description": "Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+            "description": "Built on Node.js and socket.io."
         },
         {
             "id" : 2,
-            "name": "Project 2",
+            "name": "Portfolio",
             "img" : "./img/project2.jpg",
-            "description": "Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+            "description": "It can be easily seen as this website, but I had learnt about VPS, Nginx configurations to serve to React application into public."
         },
         {
             "id" : 3,
-            "name": "Project 3",
+            "name": "3D Printing Quotation",
             "img" : "./img/project3.jpg",
-            "description": "Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+            "description": "React application for user who wants to print their 3D files can see it on website, choose material settings and send it to our customer- an engineering company."
         },
         {
             "id" : 4,
@@ -61,7 +61,7 @@
                 },
                 {
                     "id" : 5,
-                    "name": "Software Engineer Project"
+                    "name": "Software Engineer Projects"
                 }
             ],
             "img" : "./img/vamk.png"
@@ -83,6 +83,10 @@
                 {
                     "id" : 3,
                     "name": "Advance JavaScript"
+                },
+                {
+                    "id" : 4,
+                    "name": "UI/UX Design"
                 }
             ],
             "img" : "./img/udemy.jpg"
@@ -96,7 +100,7 @@
             "time" : "June 2018- now",
             "role" : "Full-stack Developer Intern",
             "tools" : ["Angular 5", "Node.js", "Bootstrap"],
-            "description" :"Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
+            "description" :"We are working on a new project Plannr.eu, where people from over the world can get information, contact directly to the service providers, to help them moving to anouther country. I have been fun building new features, making things look good and testing whole application."
         }
     ],
     "contact" : {
