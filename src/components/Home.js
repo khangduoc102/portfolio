@@ -1,8 +1,11 @@
 import React from 'react';
 import IoBonfire from 'react-icons/lib/io/bonfire';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
-import FaAngleLeft from 'react-icons/lib/fa/angle-left';
-import { Collapse, CardBody, Card } from 'reactstrap';
+import { Collapse, Card, CardBody, Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption } from 'reactstrap';
 
 import data from './../data.json';
 
@@ -10,11 +13,20 @@ export default class Home extends React.Component {
     state= {
         showedPrj: [0, 1, 2],
         collapseCourses: [false, false],
-        collapseExps: [false]
+        collapseExps: [false],
+        activeIndex:0
     }
 
     componentDidMount = () => {
 
+    }
+
+    componentDidMount= () => {
+        window.addEventListener('resize', this.handleResize);
+    }
+
+    handleResize= () => {
+        
     }
 
     toggleCourses(id) {
@@ -55,72 +67,110 @@ export default class Home extends React.Component {
         }
     }
 
+    // For Carouse
+        onExiting = () => {
+            this.animating = true;
+        }
+        
+        onExited= () => {
+            this.animating = false;
+        }
+        
+        next= () => {
+            if (this.animating) return;
+            const nextIndex = this.state.activeIndex === data.projects.length - 1 ? 0 : this.state.activeIndex + 1;
+            this.setState({ activeIndex: nextIndex });
+        }
+        
+        previous= () => {
+            if (this.animating) return;
+            const nextIndex = this.state.activeIndex === 0 ? data.projects.length - 1 : this.state.activeIndex - 1;
+            this.setState({ activeIndex: nextIndex });
+        }
+        
+        goToIndex = (newIndex) => {
+            if (this.animating) return;
+            this.setState({ activeIndex: newIndex });
+        }
+    // End
+
     render() {
+        const { activeIndex } = this.state;
+
+        const slides = data.projects.map((item, index) => {
+            return (
+                <CarouselItem
+                onExiting={this.onExiting}
+                onExited={this.onExited}
+                key={index}
+                >
+                <img src={item.img} alt={item.name} />
+                <CarouselCaption captionText={item.description} captionHeader={item.name} />
+                </CarouselItem>
+            );
+        });
+
         return (
-            <div className="app-body">
-                <div className="banner">
+            <div className="container-fluid p-0 app-body">
+                <div className="container p-0 banner">
                     <div className="row">
-                        <div className="logo">
-                            <p><IoBonfire /></p>
-                        </div>
-                        <div className="logo-name">
-                            <p className="header">{data.banner.name}</p>
-                            <p className="sub-header">{data.banner.job}</p>
-                            
+                        <div className="container banner-body">
+                            <div className="logo">
+                                <p><IoBonfire /></p>
+                            </div>
+                            <div className="logo-name">
+                                <p className="header">{data.banner.name}</p>
+                                <p className="sub-header">{data.banner.job}</p>
+                                
+                            </div>
                         </div>
                     </div>
-                    <p className="text">{data.banner.description}</p>        
+                    <div className="row">
+                        <p className="text">{data.banner.description}</p>
+                    </div>        
                 </div>
-                <div className="info" id="about">
-                    <div className="intro">
-                        <div className="intro-block">
-                            <p className="sub-header">{data.intro.title}</p>
-                            <div className="line"></div>
-                            <p className="text">{ data.intro.description }</p>
-                            <button className="btn rm1">
-                                <p className="sub-title">Read more <FaAngleRight /></p>
-                            </button>
-                        </div>
-                        <div className="ava">
-                            <img src={data.intro.img} alt="my ava" className="ava-img" />
+                <div className="container-fluid p-0 info" id="about">
+                    <div className="container intro">
+                        <div className="row">
+                            <div className="col-lg-8 col-md-6 col-xs-12">
+                                <div className="intro-block">
+                                    <p className="sub-header">{data.intro.title}</p>
+                                    <div className="line"></div>
+                                    <p className="text">{ data.intro.description }</p>
+                                    <button className="btn rm1">
+                                        <p className="sub-title">Read more <FaAngleRight /></p>
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-6 col-xs-12">
+                                <div className="ava">
+                                    <img src={data.intro.img} alt="my ava" className="ava-img" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="line"> </div>
-                    <div className="projects" id="projects">
+                    <div className="container projects" id="projects">
                         <p className="sub-header">Projects</p>
                         <div className="line"></div>
-                        <div className="slide-list">
-                            <div className="left" onClick={this.handleLeft}>
-                                <p className="header"><FaAngleLeft /></p>
-                            </div>
-                            <div className="container">
-                                <div className="row">
-                                {
-                                        data.projects.map((prj, index) => {
-                                            if(this.state.showedPrj.includes(index)){
-                                                return (
-                                                    <div className="slide-list-element" key={index}>
-                                                        <div className="img-block">
-                                                            <img src={prj.img} alt="alt" />
-                                                        </div>
-                                                        <div className="text-block">
-                                                            <p className="sub-title prj-title">{prj.name}</p>
-                                                            <p className="text prj-des">{prj.description}</p>
-                                                        </div>
-                                                        <button className="btn">
-                                                            <p className="sub-title">Read more <FaAngleRight /></p>
-                                                        </button>
-                                                    </div>
-                                                )
-                                            }
-                                            else return null;
-                                        })
-                                }
-                                </div>
-                            </div>
-                            <div className="right" onClick={this.handleRight}>
-                                <p className="header"><FaAngleRight /></p>
-                            </div>
+                        <div className="container">
+                            
+                            
+                            
+                                <Carousel
+                                    activeIndex={activeIndex}
+                                    next={this.next}
+                                    previous={this.previous}
+                                >
+                                    <CarouselIndicators items={data.projects} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                                    {slides}
+                                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                                    <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                                </Carousel>
+
+                                
+                          
+                            
                         </div>
                     </div>
 

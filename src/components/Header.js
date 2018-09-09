@@ -11,7 +11,7 @@ export default class Header extends React.Component {
 
     handleScroll = () =>{
         let lastScrollY = window.scrollY;
-        if(lastScrollY>=600 && lastScrollY<2911){
+        if(lastScrollY>=155){
             this.setState({className: 'app-header app-header_scroll-changed'})
         }
         else{

@@ -1,24 +1,30 @@
 .app-header{
-    width: 100vw;
+    width: 100%;
 
     height: 6rem;
     background: linear-gradient(-135deg, #2AF598, #009EFD) no-repeat center center fixed;
-    position: sticky;
-    display: flex;
-    top:0;
+    position: relative;
+    margin-top: 15rem;
+    margin-bottom:15rem;
     left:0;
-    z-index: 1;
-    margin: 0 calc((100vw - 906px)/2 * -1);
+    
 }   
     .app-header_scroll-changed{
+        position: sticky;
+        display: flex;
         background:none;
+        top: 0;
+        left:0;
+        z-index: 1;
+
         color: rgba(88, 89, 91, 0.9);
-        background-color: rgba(88, 89, 91, 1);
+        background-color: none;
+        animation-name: shiftColor;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 .nav-bar {
     width: 100%;
-    min-width: 960px;
-    max-width: 1080px;
     margin: 0 auto;
 }
     .nav-bar__tab {
@@ -47,5 +53,11 @@
         width: 100%;
         line-height: 6rem;
         border: none;   
+    }
+
+
+    @keyframes shiftColor {
+        from {background-color: none;}
+        to {background-color: rgba(88, 89, 91, 1);;}
     }
 

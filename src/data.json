@@ -14,25 +14,25 @@
         {
             "id" : 1,
             "name": "Chat App",
-            "img" : "./img/project1.jpg",
+            "img" : "./img/test.png",
             "description": "Built on Node.js and socket.io."
         },
         {
             "id" : 2,
             "name": "Portfolio",
-            "img" : "./img/project2.jpg",
+            "img" : "./img/test.png",
             "description": "It can be easily seen as this website, but I had learnt about VPS, Nginx configurations to serve to React application into public."
         },
         {
             "id" : 3,
             "name": "3D Printing Quotation",
-            "img" : "./img/project3.jpg",
+            "img" : "./img/test.png",
             "description": "React application for user who wants to print their 3D files can see it on website, choose material settings and send it to our customer- an engineering company."
         },
         {
             "id" : 4,
             "name": "Project 4",
-            "img" : "./img/project1.jpg",
+            "img" : "./img/test.png",
             "description": "Lorem ipsum dolor sit amet, cu pro dicit torquatos contentiones, in cum solet iisque praesent. Brute omnium disputando eum id, putent delicata sea te, at reque mandamus appellantur sea."
         }
     ],

@@ -59,7 +59,7 @@ export default class Home extends React.Component {
         return (
             <div className="container-fluid app-footer" id="contact">
                 <div className="row">
-                    <div className="col-8 contact-form">
+                    <div className="col-md-8 contact-form">
                         <p className="sub-header">Get in touch</p>
                         <div className="line"></div>
                         <form onSubmit={this.onSubmit}>
@@ -85,7 +85,7 @@ export default class Home extends React.Component {
                             }
                         </form>
                     </div>
-                    <div className="col-4 contact-places">
+                    <div className="col-md-4 contact-places">
                         <p className="sub-header">Contact</p>
                         <div className="line"></div>
                         <div className="form-group">

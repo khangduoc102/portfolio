@@ -38,8 +38,8 @@
             border: 16px solid #f3f3f3; /* Light grey */
             border-top: 16px solid #3498db; /* Blue */
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             animation: spin 2s linear infinite;
         }
 
@@ -60,7 +60,6 @@
     }
         .contact-places .address-block h3{
             float: left;
-            width: 5rem;
             height: 5rem;
             border: solid 1px white;
             border-radius: 50%;

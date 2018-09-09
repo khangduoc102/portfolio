@@ -2,7 +2,6 @@ html{
     font-family: 'Montserrat', sans-serif;
     font-size: 62.5%;
     color: #58595b;
-    min-width: 1280px
 }
 
 body {
@@ -12,17 +11,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
-}
-
-#root {
-    margin: 0 auto;
-    width: 960px;
-    font-family: 'Montserrat', sans-serif;
-    /*
-    background-size: cover;
-    position: fixed;
-    background-attachment: fixed, center;
-    */
 }
 
 a {
@@ -48,7 +36,6 @@ a {
 .app-footer{
     display: block;
     height: 70rem;
-    padding: 15rem 0;
     color: white;
 }
 
