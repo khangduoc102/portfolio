@@ -66,6 +66,7 @@
     background-color: white; 
     width: 100%;
     border-radius: 1.5rem;
+    height: fit-content;
 }
     .intro{
         height: auto;
@@ -148,7 +149,7 @@
     .education{
         text-align: center;
         height: fit-content;
-        width: calc(100% - 15.4rem);
+        width: 100%;
         margin: 0 auto;
         padding-top: 10rem;
         margin-bottom: 2rem;
@@ -163,6 +164,10 @@
             background: linear-gradient(to right, #14C7CE, #009EFD );
             border: none;
             margin: 4.5rem auto;
+        }
+
+        .education .row{
+            margin: 0;
         }
 
         .education .ava {
@@ -191,7 +196,7 @@
             }
             .education .description .sub-title{
                 color: #212529;
-                margin-top: -0.5rem;
+                margin-top: 0;
                 margin-bottom: 0.875rem;
             }
             .education .description .text{
@@ -210,15 +215,13 @@
             }
                 .education .dropdown .dropdown-toggle{
                     float: right;
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 1rem;
                 }
 
                 .education .dropdown .collapse, .education .dropdown .collapsing{
-                    
-                    float: right;
                     width: 100%;
                 }
-                .education .dropdown .card {
+                .education .card {
                     font-size: $s-size;
                     text-align: right;
                     color: #58595b;
@@ -228,7 +231,7 @@
     .exp{
         text-align: center;
         height: fit-content;
-        width: calc(100% - 15.4rem);
+        width: 100%;
         margin: 0 auto;
         padding-top: 10rem;
         margin-bottom: 10rem;
@@ -243,6 +246,10 @@
             background: linear-gradient(to right, #14C7CE, #009EFD );
             border: none;
             margin: 4.5rem auto;
+        }
+
+        .education .row{
+            margin: 0;
         }
 
         .exp .ava {
@@ -272,7 +279,7 @@
             }
             .exp .description .sub-title{
                 color: #212529;
-                margin-top: -0.5rem;
+                margin-top: 0;
                 margin-bottom: 0.875rem;
             }
             .exp .description .text{
@@ -284,17 +291,16 @@
                 font-weight: 400;
             }
             .exp .dropdown{
-                position: absolute;
-                right:0;
                 padding-top: 3rem;
                 width: 100%;
+                
             }
                 .exp .dropdown .dropdown-toggle{
                     float: right;
+                    margin-bottom: 1rem;
                 }
 
                 .exp .collapse, .exp .collapsing{
-                    margin-top: 1.5rem;
                     width: 100%;
                 }
                 .exp .card {
@@ -364,5 +370,56 @@
         float: none;
         display: block;
         margin: 4rem auto;
+    }
+
+    .education .ava{
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    .education .description{
+        text-align: center;
+    }
+    .education .dropdown .dropdown-toggle{
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+    .education .dropdown .collapse, .education .dropdown .collapsing{
+                    
+        float: none;
+        width: 100%;
+    }
+    .education .card {
+        font-size: $s-size;
+        text-align: center;
+        color: #58595b;
+    }
+
+
+    .exp .ava{
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    .exp .description{
+        text-align: center;
+    }
+    .exp .dropdown .dropdown-toggle{
+        float: none;
+        display: block;
+    }
+    .exp .dropdown .collapse, .education .dropdown .collapsing{
+                    
+        float: none;
+        width: 100%;
+    }
+    .exp .card {
+        font-size: $s-size;
+        text-align: justify;
+        color: #58595b;
     }
 }

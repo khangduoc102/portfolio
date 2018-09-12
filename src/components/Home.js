@@ -176,7 +176,7 @@ export default class Home extends React.Component {
 
                     <div className="line"> </div>
                     
-                    <div className="education" id="education">
+                    <div className="container education" id="education">
                         <p className="sub-header">Education</p>
                         <div className="line"></div>
                         <div className="show-list">
@@ -184,33 +184,44 @@ export default class Home extends React.Component {
                                 data.education.map((element) => (
                                     <div className="container show-list-element" key={element.id}>
                                         <div className="row">
-                                            <div className="col-8 p-0">
-                                                <div className="ava">
-                                                    <img src={element.img} alt="vamk" className="ava-img"/>
-                                                </div>
-                                                <div className="description">
-                                                    <p className="sub-title">{element.name}</p>
-                                                    <p className="text">{element.degree}</p>
-                                                    <p className="mini-text">{element.time}</p>
+                                            <div className="col-md-10 p-0">
+                                                <div className="row">
+                                                    <div className="col-md-2">
+                                                        <div className="ava">
+                                                            <img src={element.img} alt="vamk" className="ava-img"/>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-10">
+                                                        <div className="description">
+                                                            <p className="sub-title">{element.name}</p>
+                                                            <p className="text">{element.degree}</p>
+                                                            <p className="mini-text">{element.time}</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="col-4 p-0">
+                                            <div className="col-md-2 p-0">
                                                         <div className="dropdown">
                                                         
                                                             <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" onClick={() => this.toggleCourses(element.id)} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</button>
-                                                            <Collapse isOpen={this.state.collapseCourses[element.id-1]}>
-                                                                <Card>
-                                                                    <CardBody>
-                                                                        {
-                                                                            element.courses.map((course) => (
-                                                                                <a className="dropdown-item" key={course.id}>{course.name}</a>
-                                                                            ))
-                                                                        }
-                                                                    </CardBody>
-                                                                </Card>
-                                                            </Collapse>
+                                                            
                                                                              
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div className="row justify-content-end">
+                                            <div className="col-md-4 p-0">
+                                                <Collapse isOpen={this.state.collapseCourses[element.id-1]}>
+                                                    <Card>
+                                                        <CardBody>
+                                                            {
+                                                                element.courses.map((course) => (
+                                                                    <a className="dropdown-item" key={course.id}>{course.name}</a>
+                                                                ))
+                                                            }
+                                                        </CardBody>
+                                                    </Card>
+                                                </Collapse>
                                             </div>
                                         </div>
                                     </div> 
@@ -221,7 +232,7 @@ export default class Home extends React.Component {
                     
                     <div className="line"> </div>
                     
-                    <div className="exp" id="exp">
+                    <div className="container exp" id="exp">
                         <p className="sub-header">Experience</p>
                         <div className="line"></div>
                         <div className="show-list">
@@ -229,32 +240,40 @@ export default class Home extends React.Component {
                                 data.exp.map((element) => (
                                     <div className="container show-list-element" key={element.id}>
                                         <div className="row">
-                                            <div className="col-8 p-0">
-                                                <div className="ava">
-                                                    <img src={element.img} alt="vamk" className="ava-img"/>
-                                                </div>
-                                                <div className="description">
-                                                    <p className="sub-title">{element.companyName}</p>
-                                                    <p className="text">{element.role}</p>
-                                                    <p className="mini-text">{element.time}</p>
+                                            <div className="col-md-10 p-0">
+                                                <div className="row">
+                                                    <div className="col-md-2">
+                                                        <div className="ava">
+                                                            <img src={element.img} alt="vamk" className="ava-img"/>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-10">
+                                                        <div className="description">
+                                                            <p className="sub-title">{element.companyName}</p>
+                                                            <p className="text">{element.role}</p>
+                                                            <p className="mini-text">{element.time}</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="col-4 p-0">
+                                            <div className="col-md-2 p-0">
                                                 <div className="dropdown">
                                                     <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" onClick={() => this.toggleExps(element.id)} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Detail</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <Collapse isOpen={this.state.collapseExps[element.id-1]}>
-                                                            <Card>
-                                                                <CardBody>
-                                                                    {
-                                                                        element.description
-                                                                    }
-                                                                </CardBody>
-                                                            </Card>
-                                            </Collapse>
+                                            <div className="col-12 p-0">
+                                                <Collapse isOpen={this.state.collapseExps[element.id-1]}>
+                                                                <Card>
+                                                                    <CardBody>
+                                                                        {
+                                                                            element.description
+                                                                        }
+                                                                    </CardBody>
+                                                                </Card>
+                                                </Collapse>
+                                            </div>
                                         </div>
                                     </div> 
                                 ))
