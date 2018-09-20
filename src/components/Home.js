@@ -102,7 +102,7 @@ export default class Home extends React.Component {
                 <CarouselItem
                 onExiting={this.onExiting}
                 onExited={this.onExited}
-                key={index}
+                key={item.src}
                 >
                 <img src={item.img} alt={item.name} />
                 <CarouselCaption captionText={item.description} captionHeader={item.name} />

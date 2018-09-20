@@ -57,23 +57,23 @@ export default class Home extends React.Component {
     }
     render() {
         return (
-            <div className="container-fluid app-footer" id="contact">
+            <div className="container app-footer" id="contact">
                 <div className="row">
-                    <div className="col-md-8 contact-form">
+                    <div className="col-md-6 contact-form">
                         <p className="sub-header">Get in touch</p>
                         <div className="line"></div>
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
                                 <p className="text">Name*</p>
-                                <input className="form-control" type="text" size="50"/>
+                                <input className="form-control" type="text"/>
                             </div>
                             <div className="form-group">
                                 <p className="text">Email*</p>
-                                <input className="form-control" type="text" size="50"/>
+                                <input className="form-control" type="text"/>
                             </div>
                             <div className="form-group">
                                 <p className="text">Message*</p>
-                                <textarea className="form-control" rows="6" cols="60"/>
+                                <textarea className="form-control" rows="6"/>
                             </div>
                             <button className="btn send-btn" type="submit" disabled={this.state.sendButtonStatus}>
                                 {
@@ -85,7 +85,7 @@ export default class Home extends React.Component {
                             }
                         </form>
                     </div>
-                    <div className="col-md-4 contact-places">
+                    <div className="col-md-6 contact-places">
                         <p className="sub-header">Contact</p>
                         <div className="line"></div>
                         <div className="form-group">
